@@ -36,6 +36,7 @@ func ToYAML(s string) (string, error) {
 		return "", err
 	}
 	d, err := yaml.Marshal(m)
+	d = strings.TrimSuffix(d, "\n")
 	return string(d), err
 }
 
